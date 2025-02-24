@@ -3,91 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <title>Shelter Management</title>
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" href="index.css">
+
 </head>
 <body>
     <header>
         <h1>Adopt Your Pet Today</h1>
     </header>
-    <main>
-        <div class="col">
-            <div class="row">
-                <div class="petCard">
-                    <img src="ShelterImages/Labrador-retriever.jpg" alt="Labrador">
-                    <div class="petInfo">
-                        <p><strong>Name:</strong><a href="bella.html"> Bella</a></p>
-                        <p><strong>Type:</strong> Dog</p>
-                        <p class="age"><strong>Age:</strong> 3 Years</p>
-                        <p class="female"><strong>Sex:</strong>Female</p>
-                    </div>
-                </div>
-            </div>
+    <div class="container">
+        <div class="row" id="pet-container">
             
-            <div class="row">
-                <div class="petCard">
-                    <img src="ShelterImages/german-shepherd.jpg" alt="German Shepherd">
-                    <div class="petInfo">
-                        <p><strong>Name:</strong> Max</p>
-                        <p><strong>Type:</strong> Dog</p>
-                        <p><strong class="age">Age:</strong> 4 Years</p>
-                        <p class="male"><strong>Sex:</strong>Male</p>
-                    </div>
-                        
-                </div>
-            </div>
         </div>
-        <div class="col">
-            <div class="row">
-                <div class="petCard">
-                    <img src="ShelterImages/golden-retriever.jpg" alt="Golden Retriever">
-                    <div class="petInfo">
-                        <p><strong>Name:</strong> Daisy</p>
-                        <p><strong>Type:</strong> Dog</p>
-                        <p class="age" ><strong>Age:</strong> 2 Years</p>
-                        <p class="female" ><strong>Sex:</strong> Female</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="petCard">
-                    <img src="ShelterImages/siberian-husky.jpg" alt="Siberian Husky">
+    </div>
 
-                    <div class="petInfo">
-                        <p><strong>Name:</strong> Rocky</p>
-                        <p><strong>Type:</strong> Dog</p>
-                        <p class="age"><strong>Age:</strong> 5 Years</p>
-                        <p class="male" ><strong>Sex:</strong> Male</p>
-                    </div>
+    <div class="loadMore">
+        <button id="loadContent">Load more</button>
+        <button id="addMore" >Add Pet</button>
+    </div>
+
+    <div class="modal fade" id="petModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="modal-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="addPetModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add a New Pet</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="add-pet-form">
+                        <div class="mb-3">
+                            <label for="pet-name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="pet-name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pet-type" class="form-label">Type</label>
+                            <input type="text" class="form-control" id="pet-type" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pet-age" class="form-label">Age</label>
+                            <input type="text" class="form-control" id="pet-age" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pet-sex" class="form-label">Sex</label>
+                            <select class="form-control" id="pet-sex">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pet-image" class="form-label">Image URL</label>
+                            <input type="url" class="form-control" id="pet-image" required>
+                        </div>
+                        
+                
+                        <button type="submit" class="btn btn-success" id="savePet">Save Pet</button>
+                    </form>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="row">
-                <div class="petCard">
-                    <img src="ShelterImages/french-bulldog.jpg" alt="French Bulldog">
-                    <div class="petInfo">
-                        <p><strong>Name:</strong> Coco</p>
-                        <p><strong>Type:</strong> Dog</p>
-                        <p class="age"><strong>Age:</strong> 2 Years</p>
-                        <p class="female" ><strong>Sex:</strong> Female</p>
-                    
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="petCard">
-                    <img src="ShelterImages/rottweiler.jpg" alt="Rottweiler">
-                    <div class="petInfo">
-                        <p><strong>Name:</strong> Bruno</p>
-                        <p><strong>Type:</strong> Dog</p>
-                        <p class="age" ><strong>Age:</strong> 6 Years</p>
-                        <p class="male"><strong>Sex:</strong> Male</p>
-                    
-                </div>
-            </div>
-        </div>
-    </main>
+    </div>
+    
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
