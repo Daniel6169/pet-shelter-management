@@ -1,0 +1,20 @@
+### GET REQUEST
+GET http://127.0.0.1:3000/api/jsonBlob/be3e03d1-46c8-475d-ab9c-359075b82631
+
+
+### POST REQUEST
+POST http://127.0.0.1:3000/api/jsonBlob
+content-type: application/json
+
+
+
+
+### PUT REQUEST
+PUT http://127.0.0.1:3000/api/jsonBlob/be3e03d1-46c8-475d-ab9c-359075b82631
+content-type: application/json
+
+
+
+
+### DELETE REQUEST
+DELETE http://127.0.0.1:3000/api/jsonBlob/be3e03d1-46c8-475d-ab9c-359075b82631
